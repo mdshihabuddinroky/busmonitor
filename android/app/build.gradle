@@ -1,0 +1,58 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+    id 'com.google.gms.google-services'  // ✅ Keep only this one
+}
+
+android {
+    namespace = "com.bus.edifice.busmonitor"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId = "com.bus.edifice.busmonitor"
+        minSdk = 23
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+        multiDexEnabled true  // ✅ Correct placement
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
+
+dependencies {
+    // ✅ Firebase BoM (Bill of Materials) - Manages all Firebase versions
+    implementation platform('com.google.firebase:firebase-bom:33.11.0')
+
+    // ✅ Firebase Core (required)
+    implementation 'com.google.firebase:firebase-analytics'
+
+    // ✅ (Optional) Add Firebase products you need
+    implementation 'com.google.firebase:firebase-database'
+    implementation 'com.google.firebase:firebase-auth'
+
+    // ✅ (Required for older devices if you have many dependencies)
+    implementation 'androidx.multidex:multidex:2.0.1'
+}
+
+// ✅ This should be at the bottom
+apply plugin: 'com.google.gms.google-services'

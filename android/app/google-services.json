@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1044803188328",
+    "firebase_url": "https://esp32bus-52bcb-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "esp32bus-52bcb",
+    "storage_bucket": "esp32bus-52bcb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1044803188328:android:7e93a91f6c400ffb92addd",
+        "android_client_info": {
+          "package_name": "com.bus.edifice.busmonitor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6cni0Bgj5NM2k_Wyac697v71Pn6vu5ac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
